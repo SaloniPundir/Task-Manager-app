@@ -68,3 +68,77 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Task Manager Project
+
+## Project Overview
+
+This is a simple Task Manager web application that allows users to manage their tasks. The flow of the website guides users through the process of signing up, logging in, and performing CRUD operations on tasks. The application provides a task management interface where users can add, edit, and delete tasks.
+
+## Features
+
+- **Sign Up**: New users can create an account by providing their username, email, and password.
+- **Login**: Registered users can log in with their email and password.
+- **Task Management**: After logging in, users can manage their tasks, including adding, editing, and deleting tasks.
+- **Real-time Updates**: Tasks are updated dynamically on the task page after adding, editing, or deleting them.
+
+## Flow of the Website
+
+### 1. **Home Page**
+The home page provides two options for the user:
+- **Login**: For users who already have an account.
+- **Signup**: For new users to create an account.
+- **Get Started**: Clicking on this button takes new users to the sign-up page.
+
+### 2. **Sign Up Page**
+On the sign-up page, users need to provide the following details:
+- **Username**: A unique name for the user.
+- **Email**: The user's email address.
+- **Password**: A secure password for the user account.
+After filling out the form, the user clicks on the **Signup** button, which redirects them to the login page.
+
+### 3. **Login Page**
+On the login page, users can log in with their email and password. After logging in successfully, the user is redirected to the **Task Page**.
+
+### 4. **Task Page**
+On the task page, users can:
+- **Add Task**: There is an input field where users can enter a new task and click the **Add** button. This will add the task to the list.
+- **Refresh the page**: After adding a task, refreshing the page will display the newly added task along with two options: **Edit** and **Delete**.
+
+#### Task List:
+- **Edit**: Clicking on the **Edit** button displays an input element where users can update the task. After updating the task, clicking **Save** will save the changes.
+- **Delete**: Clicking the **Delete** button removes the task from the list.
+
+## Technologies Used
+
+- **Frontend**: HTML, CSS, JavaScript (ReactJS)
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+
+## Installation
+
+To run the project locally, follow these steps:
+
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/SaloniPundir/Task-Manager-app.git
+    ```
+
+2. **Install dependencies**:
+    ```bash
+    cd Task-Manager-app/frontend or cd Task-Manager-app/backend
+    npm install
+    ```
+
+3. **Run the application**:
+    ```bash
+    npm start
+    ```
+
+4. Open your browser and go to `http://localhost:3000` to access the website.
+
+## Contributing
+
+Feel free to fork the repository, make changes, and create pull requests for any improvements or fixes.
+
+
