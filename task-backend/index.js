@@ -3,6 +3,7 @@ import connectDB from "./db/dbConnection.js";
 import userRoutes from "./routes/userRoutes.js";
 import cors from 'cors';
 import dotenv from 'dotenv';
+import taskRoutes from "./routes/taskRoutes.js";
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ app.use(express.json());
 
 //routes
 app.use("/api/user", userRoutes);
+app.use("api/task",taskRoutes);
 
 app.listen(port,()=> {
     console.log("Server is listening on port ",port);
