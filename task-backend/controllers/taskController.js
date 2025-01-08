@@ -5,9 +5,7 @@ export const addTask = async(req,res) => {
     try{
         const {name} = req.body;
 
-        const newTask = new Task({
-            name
-        });
+        const newTask = new Task({ name });
         await newTask.save();
         return res.status(201).json({message:"Task Added"});
 
@@ -15,6 +13,20 @@ export const addTask = async(req,res) => {
         return res.status(500).json({ message: "Error adding a task", error });
     }
 };
+
+//get a task
+export const getTask = async(req,res) => {
+    try{
+        const tasks = await Task.find();
+
+        if(!tasks || tasks.length === 0){
+            return res.status(404).json({ success: false, message: 'No tasks found' });
+        }
+        return res.status(200).json({ success: true, tasks });
+    }catch (error) {
+        return res.status(500).json({ success: false, message: 'Server error', error: error.message });
+    }
+}
 
 //delete a task
 export const deleteTask = async(req,res) =>{

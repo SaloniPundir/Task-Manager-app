@@ -12,10 +12,16 @@ export const registerUser = async(req,res) => {
         const {username, email, password} = req.body;
 
         const existingUser = await User.findOne({username});
-        if(existingUser) {
-            return res.status(400).json({
-                message: "Username already exists"
-            });
+        // if(existingUser) {
+        //     return res.status(500).json({
+        //         message: "Username already exists"
+        //     });
+        // }
+        if (existingUser) {
+          return res.status(280).send({
+            success: false,
+            message: "User Already Exist",
+          });
         }
 
         //password hashing
@@ -30,9 +36,9 @@ export const registerUser = async(req,res) => {
         await newUser.save();
 
         //registration message
-        res.status(201).json({message:"User registered successfully"});
+        return res.status(201).json({message:"User registered successfully"});
     }catch (error) {
-        res.status(500).json({ message: "Error registering user", error });
+        return res.status(500).json({ message: "Error registering user", error });
       }
 }
 

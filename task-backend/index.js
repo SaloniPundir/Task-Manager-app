@@ -21,7 +21,7 @@ app.use(express.json());
 
 //routes
 app.use("/api/user", userRoutes);
-app.use("api/task",taskRoutes);
+app.use("/api/task",taskRoutes);
 
 app.listen(port,()=> {
     console.log("Server is listening on port ",port);
