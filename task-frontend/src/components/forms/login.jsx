@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import Navbar from '../Navbar';
 
 const Login = () => {
     const [formData, setFormData] = useState({ email: "", password: "" });
@@ -34,8 +35,9 @@ const Login = () => {
   };
 
   return (
-    <>
-      <div className="flex justify-center items-center h-screen bg-gradient-to-r from-black to-slate-900">
+    <div className='h-screen bg-gradient-to-r from-black to-slate-900 '>
+      <Navbar/>
+      <div className="flex justify-center items-center m-20">
           <div className="bg-gradient-to-r from-[#cdffd8] to-[#94b9ff] p-20 rounded-2xl opacity-80 shadow-xl ">
             <form onSubmit={handleSubmit}>
               <div className="mb-6">
@@ -94,7 +96,7 @@ const Login = () => {
           </div>
           
         </div>
-    </>
+    </div>
   )
 }
 

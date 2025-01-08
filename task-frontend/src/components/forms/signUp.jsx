@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
+import Navbar from '../Navbar';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -19,13 +20,18 @@ const SignUp = () => {
       console.log("formdata: ", formData)
       const response = await axios.post("http://localhost:8000/api/user/register", formData);
 
-      const data = response.data;
+      // const data = response.data;
+      // console.log('data:'.data);
+      console.log('response:',response);
 
-      if (response.ok) {
+      if (response.status === 201) {
         alert("Registration successful!");
+        window.location.href = "/login"
+        
       } else {
-        alert(`Error: ${data.message}`);
+        alert("User already exist");
       }
+
     } catch (error) {
       console.error("Registration failed:", error);
     }
@@ -37,8 +43,9 @@ const SignUp = () => {
   };
 
   return (
-    <>
-      <div className="flex justify-center items-center h-screen bg-gradient-to-r from-black to-slate-900">
+    <div className='h-screen bg-gradient-to-r from-black to-slate-900'>
+      <Navbar/>
+      <div className="flex justify-center items-center mt-20">
         <div className="bg-gradient-to-r from-[#cdffd8] to-[#94b9ff] p-20 rounded-2xl opacity-80 shadow-slate-200 shadow-2xl">
           <form onSubmit={handleSubmit}>
             <div className="mb-4 w-full">
@@ -105,7 +112,7 @@ const SignUp = () => {
           </form>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

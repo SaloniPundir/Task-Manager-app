@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { RiEdit2Fill } from "react-icons/ri";
 import { MdDelete } from "react-icons/md";
+import Navbar from '../Navbar';
 
 const Task = () => {
 
@@ -21,7 +22,6 @@ const Task = () => {
       }
     };
     fetchTasks();
-    console.log(tasks);
   }, []);
 
   // Add a new task
@@ -56,6 +56,7 @@ const Task = () => {
         currentName: currentEditTask,
         newName: editTaskName,
       });
+
       setTasks(
         tasks.map((task) =>
           task.name === currentEditTask ? { ...task, name: editTaskName } : task
@@ -69,7 +70,9 @@ const Task = () => {
   };
 
   return (
-    <div className="p-8 h-screen bg-gradient-to-r from-black to-slate-900 text-white">
+    <div className=" h-screen bg-gradient-to-r from-black to-slate-900 text-white">
+      <Navbar/>
+      <div className='p-10 mt-4'>
       <h1 className="text-4xl font-bold mb-4 text-center">Manage your Task</h1>
       <p className='text-center mb-10'>With some easy steps</p>
 
@@ -125,6 +128,7 @@ const Task = () => {
           </button>
         </div>
       )}
+      </div>
     </div>
   );
 }

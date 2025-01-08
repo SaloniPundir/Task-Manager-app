@@ -1,10 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Navbar from '../Navbar'
 
 const Home = () => {
   return (
-    <>
-      <div className='flex justify-center items-center h-screen bg-gradient-to-r from-black to-slate-900 text-white'>
+    <div className='h-screen bg-gradient-to-r from-black to-slate-900 text-white'>
+    <Navbar/>
+      <div className='flex justify-center items-center mt-20'>
         <div className="">
           <h1 className="font-bold text-6xl mb-10">TASK MANAGER</h1>
           <p className="font-semibold text-xl">
@@ -22,7 +24,7 @@ const Home = () => {
           </div>
         </div>
         </div>
-    </>
+    </div>
   )
 }
 
