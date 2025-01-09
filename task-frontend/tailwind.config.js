@@ -20,7 +20,13 @@ module.exports = {
       "2xl": "1536px", // large desktop
       // => @media (min-width: 1536px) { ... }
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        copperplate: ['Copperplate', 'sans-serif'],
+        papyrus: ['Papyrus', 'fantasy'],
+        fantasy: ['Fantasy', 'cursive'],
+      },
+    },
   },
   plugins: [],
 }

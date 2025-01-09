@@ -4,7 +4,7 @@ import Navbar from '../Navbar'
 
 const Home = () => {
   return (
-    <div className='h-screen bg-gradient-to-r from-black to-slate-900 text-white'>
+    <div className='h-screen bg-gradient-to-r from-black to-purple-950 text-white'>
     <Navbar/>
       <div className='flex justify-center items-center mt-20'>
         <div className="">

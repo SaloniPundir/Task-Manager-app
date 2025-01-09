@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import Navbar from '../Navbar';
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -43,10 +44,11 @@ const SignUp = () => {
   };
 
   return (
-    <div className='h-screen bg-gradient-to-r from-black to-slate-900'>
+    <div className='h-screen bg-gradient-to-r from-black to-slate-900 text-white'>
       <Navbar/>
-      <div className="flex justify-center items-center mt-20">
-        <div className="bg-gradient-to-r from-[#cdffd8] to-[#94b9ff] p-20 rounded-2xl opacity-80 shadow-slate-200 shadow-2xl">
+      <h1 className='text-center mt-10 font-papyrus text-xl font-semibold animate-bounce'>Register Yourself !</h1>
+      <div className="flex justify-center items-center mt-8">
+        <div className="bg-gradient-to-r from-[#cdffd8] to-[#94b9ff] p-20 rounded-2xl opacity-80 ">
           <form onSubmit={handleSubmit}>
             <div className="mb-4 w-full">
               <label
@@ -97,7 +99,7 @@ const SignUp = () => {
                 value={formData.password}
                 onChange={handleChange}
                 placeholder="Create your password"
-                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 text-black"
               />
             </div>
 
@@ -109,6 +111,7 @@ const SignUp = () => {
                 Sign Up
               </button>
             </div>
+            <Link to='/login'><p className='mt-4 text-black text-center'>Already registered? <span className='text-blue-500 hover:underline'><i> Login Here</i></span></p></Link>
           </form>
         </div>
       </div>

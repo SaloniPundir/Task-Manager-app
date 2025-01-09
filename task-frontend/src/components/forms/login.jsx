@@ -35,9 +35,11 @@ const Login = () => {
   };
 
   return (
-    <div className='h-screen bg-gradient-to-r from-black to-slate-900 '>
+    <div className='h-screen bg-gradient-to-r from-black to-slate-900 text-white'>
       <Navbar/>
-      <div className="flex justify-center items-center m-20">
+      <h1 className='text-center mt-10 font-papyrus text-xl font-semibold animate-bounce'>Login Here !</h1>
+      <div className="flex justify-center items-center m-10">
+        
           <div className="bg-gradient-to-r from-[#cdffd8] to-[#94b9ff] p-20 rounded-2xl opacity-80 shadow-xl ">
             <form onSubmit={handleSubmit}>
               <div className="mb-6">
@@ -72,7 +74,7 @@ const Login = () => {
                   value={formData.password}
                   onChange={handleChange}
                   placeholder="Enter your password"
-                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 text-black"
                   required
                 />
               </div>
@@ -86,7 +88,7 @@ const Login = () => {
               </div>
             </form>
             <div className="mt-10 text-center">
-              <p className="text-md font-medium">
+              <p className="text-md font-medium text-black">
                 New user?{" "}
                 <a href="/signUp" className="text-blue-500 hover:underline">
                   Create an account
